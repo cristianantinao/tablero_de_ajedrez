@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Ajedrez</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+
+<body>
+    <div>
+        <table>
+            {% for i in range (0,fila) %}
+            <tr>
+                {% for x in range (0,columna) %}
+                {% if (x+i) % 2 == 0 %}
+                <td style="background-color: {{color1}};"></td>
+                {% else %}
+                <td style="background-color: {{color2}};"></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
